@@ -1,0 +1,299 @@
+{
+  "project_info": {
+    "project_number": "32041291444",
+    "firebase_url": "https://my-urdu-to-english-default-rtdb.firebaseio.com",
+    "project_id": "my-urdu-to-english",
+    "storage_bucket": "my-urdu-to-english.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32041291444:android:c2142248c9e892ad0811e1",
+        "android_client_info": {
+          "package_name": "com.apex.urdu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf0sBxtpwMIkEyzGXl0OvRJz0BVtTu6eA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "32041291444-gt7dqmnjei8f1qdb7mjps4tplneljskq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32041291444:android:d24b65a1b2c02ae00811e1",
+        "android_client_info": {
+          "package_name": "com.apex.urdu1122"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf0sBxtpwMIkEyzGXl0OvRJz0BVtTu6eA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "32041291444-gt7dqmnjei8f1qdb7mjps4tplneljskq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32041291444:android:7f0a2c84e8e8544b0811e1",
+        "android_client_info": {
+          "package_name": "com.example.crud_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf0sBxtpwMIkEyzGXl0OvRJz0BVtTu6eA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "32041291444-gt7dqmnjei8f1qdb7mjps4tplneljskq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32041291444:android:21904ed36c58428d0811e1",
+        "android_client_info": {
+          "package_name": "com.example.firebae_notification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf0sBxtpwMIkEyzGXl0OvRJz0BVtTu6eA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "32041291444-gt7dqmnjei8f1qdb7mjps4tplneljskq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32041291444:android:8fb2a3ac15365e2d0811e1",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf0sBxtpwMIkEyzGXl0OvRJz0BVtTu6eA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "32041291444-gt7dqmnjei8f1qdb7mjps4tplneljskq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32041291444:android:a00ae33dc15035570811e1",
+        "android_client_info": {
+          "package_name": "com.example.instagrame_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf0sBxtpwMIkEyzGXl0OvRJz0BVtTu6eA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "32041291444-gt7dqmnjei8f1qdb7mjps4tplneljskq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32041291444:android:5844aedc3679abfc0811e1",
+        "android_client_info": {
+          "package_name": "com.example.untitled7"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf0sBxtpwMIkEyzGXl0OvRJz0BVtTu6eA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "32041291444-gt7dqmnjei8f1qdb7mjps4tplneljskq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32041291444:android:b769f09efbebe6680811e1",
+        "android_client_info": {
+          "package_name": "com.example.untitled8"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf0sBxtpwMIkEyzGXl0OvRJz0BVtTu6eA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32041291444-fl6i7isnbr7thv8jj5kh4oap5bvehome.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "32041291444-gt7dqmnjei8f1qdb7mjps4tplneljskq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
