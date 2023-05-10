@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
+import 'auth/login_page.dart';
 import 'firebasescreen.dart';
 
 Future<void> main() async {
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:  AddPage(),
+      home: LoginPage(),
     );
   }
 }
