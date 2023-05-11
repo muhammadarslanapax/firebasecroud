@@ -1,28 +1,35 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:untitled8/response.dart';
 
-import 'add.dart';
+import '../modals/response.dart';
 
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 final CollectionReference _Collection = _firestore.collection('Employee');
-
 class FirebaseCrud {
-  static Future<Response> addEmployee(
-      Add add
-      ) async {
+
+
+  static Future<Response> addEmployee({
+    required String name,
+    required String position,
+    required String contactno,
+  }) async {
+
     Response response = Response();
-    DocumentReference documentReferencer = _Collection.doc();
+    DocumentReference documentReferencer =
+    _Collection.doc();
 
     Map<String, dynamic> data = <String, dynamic>{
-      "employee_name": add.name,
-      "position": add.position,
-      "contact_no": add.contactno
+      "employee_name": name,
+      "position": position,
+      "contact_no" : contactno
     };
 
-    var result = await documentReferencer.set(data).whenComplete(() {
+    var result = await documentReferencer
+        .set(data)
+        .whenComplete(() {
       response.code = 200;
       response.message = "Sucessfully added to the database";
-    }).catchError((e) {
+    })
+        .catchError((e) {
       response.code = 500;
       response.message = e;
     });
@@ -30,11 +37,15 @@ class FirebaseCrud {
     return response;
   }
 
+
   static Stream<QuerySnapshot> readEmployee() {
-    CollectionReference notesItemCollection = _Collection;
+    CollectionReference notesItemCollection =
+        _Collection;
 
     return notesItemCollection.snapshots();
   }
+
+
 
   static Future<Response> updateEmployee({
     required String name,
@@ -43,18 +54,22 @@ class FirebaseCrud {
     required String docId,
   }) async {
     Response response = Response();
-    DocumentReference documentReferencer = _Collection.doc(docId);
+    DocumentReference documentReferencer =
+    _Collection.doc(docId);
 
     Map<String, dynamic> data = <String, dynamic>{
       "employee_name": name,
       "position": position,
-      "contact_no": contactno
+      "contact_no" : contactno
     };
 
-    await documentReferencer.update(data).whenComplete(() {
+    await documentReferencer
+        .update(data)
+        .whenComplete(() {
       response.code = 200;
       response.message = "Sucessfully updated Employee";
-    }).catchError((e) {
+    })
+        .catchError((e) {
       response.code = 500;
       response.message = e;
     });
@@ -66,17 +81,25 @@ class FirebaseCrud {
     required String docId,
   }) async {
     Response response = Response();
-    DocumentReference documentReferencer = _Collection.doc(docId);
+    DocumentReference documentReferencer =
+    _Collection.doc(docId);
 
-    await documentReferencer.delete().whenComplete(() {
+    await documentReferencer
+        .delete()
+        .whenComplete((){
       response.code = 200;
       response.message = "Sucessfully Deleted Employee";
-    }).catchError((e) {
+    })
+        .catchError((e) {
       response.code = 500;
       response.message = e;
     });
 
     return response;
   }
+
+
+
+
 //CRUD method here
 }

@@ -1,27 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:untitled8/add.dart';
 
-import 'firebase.dart';
-import 'list.dart';
+import '../../modals/fetchEmploy.dart';
+import '../../service/firebase_auth.dart';
+import 'listPage.dart';
 
 
-class AddPage extends StatefulWidget {
+
+class EditPage extends StatefulWidget {
+  final Employee? employee;
+  EditPage({this.employee});
+
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return _AddPage();
+    return _EditPage();
   }
 }
 
-class _AddPage extends State<AddPage> {
+class _EditPage extends State<EditPage> {
   final _employee_name = TextEditingController();
   final _employee_position = TextEditingController();
   final _employee_contact = TextEditingController();
+  final _docid = TextEditingController();
+
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
+  void initState() {
+    // TODO: implement initState
+    _docid.value = TextEditingValue(text: widget.employee!.uid.toString());
+    _employee_name.value = TextEditingValue(text: widget.employee!.employeename.toString());
+    _employee_position.value = TextEditingValue(text: widget.employee!.position.toString());
+    _employee_contact.value = TextEditingValue(text: widget.employee!.contactno.toString());
+
+  }
+
+  @override
   Widget build(BuildContext context) {
+
+
+    final DocIDField = TextField(
+        controller: _docid,
+        readOnly: true,
+        autofocus: false,
+        decoration: InputDecoration(
+            contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+            hintText: "Name",
+            border:
+            OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))));
+
+
+
     final nameField = TextFormField(
         controller: _employee_name,
         autofocus: false,
@@ -69,7 +99,7 @@ class _AddPage extends State<AddPage> {
             MaterialPageRoute<dynamic>(
               builder: (BuildContext context) => ListPage(),
             ),
-                (route) => false, //To disable back feature set to false
+                (route) => false, //if you want to disable back feature set to false
           );
         },
         child: const Text('View List of Employee'));
@@ -83,15 +113,11 @@ class _AddPage extends State<AddPage> {
         padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () async {
           if (_formKey.currentState!.validate()) {
-            var response = await FirebaseCrud.addEmployee(
-                // name: _employee_name.text,
-                // position: _employee_position.text,
-                // contactno: _employee_contact.text
-              Add(name:_employee_name.text ,position:_employee_position.text ,contactno:_employee_contact.text )
-
-
-
-            );
+            var response = await FirebaseCrud.updateEmployee(
+                name: _employee_name.text,
+                position: _employee_position.text,
+                contactno: _employee_contact.text,
+                docId: _docid.text);
             if (response.code != 200) {
               showDialog(
                   context: context,
@@ -112,7 +138,7 @@ class _AddPage extends State<AddPage> {
           }
         },
         child: Text(
-          "Save",
+          "Update",
           style: TextStyle(color: Theme.of(context).primaryColorLight),
           textAlign: TextAlign.center,
         ),
@@ -136,6 +162,8 @@ class _AddPage extends State<AddPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  DocIDField,
+                  const SizedBox(height: 25.0),
                   nameField,
                   const SizedBox(height: 25.0),
                   positionField,

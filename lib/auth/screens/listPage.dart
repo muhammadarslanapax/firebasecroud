@@ -1,11 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 import 'package:flutter/material.dart';
 
-import 'edit.dart';
-import 'employ.dart';
-import 'firebase.dart';
-import 'firebasescreen.dart';
+import '../../modals/fetchEmploy.dart';
+import '../../service/firebase_auth.dart';
+import 'addPage.dart';
+import 'editPage.dart';
 
 
 
