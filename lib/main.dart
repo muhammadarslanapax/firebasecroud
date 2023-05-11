@@ -1,7 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-import 'auth/screens/addPage.dart';
+import 'crud/auth/screens/addPage.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
