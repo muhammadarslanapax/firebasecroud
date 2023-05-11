@@ -1,88 +1,115 @@
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'crud/auth/screens/addPage.dart';
+import 'auth2/pages/auth_page.dart';
+import 'auth2/pages/fire_store.dart';
+import 'auth2/pages/function_page.dart';
+import 'auth2/pages/remote_config_page.dart';
+import 'auth2/pages/storage_page.dart';
+import 'auth2/widgets/custom_bottom_app_bar.dart';
 
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-  );
+
+  await Firebase.initializeApp();
+
+  await FirebaseAppCheck.instance.activate();
+
+  // do not use these durations in production as the server limit will be reached very quickly!
+  await FirebaseRemoteConfig.instance.setConfigSettings(RemoteConfigSettings(
+    fetchTimeout: const Duration(minutes: 1),
+    minimumFetchInterval: const Duration(minutes: 1),
+  ));
+  await FirebaseRemoteConfig.instance
+      .setDefaults(const {"platformString": "Hello!"});
+
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: AddPage(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: const HomePage(),
     );
   }
 }
-class Dashboard extends StatelessWidget {
-  const Dashboard({Key? key}) : super(key: key);
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return  Scaffold(
-      body: SingleChildScrollView(
-        child: ListView(
-          shrinkWrap: true,
-          primary: false,
-          children: [
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ElevatedButton(onPressed: (){}, child: Text("Add")),
-                ElevatedButton(onPressed: (){}, child: Text("update")),
-                ElevatedButton(onPressed: (){}, child: Text("delete")),
-
-
-
-              ],
-            ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          ],
-        ),
-      ),
-
-
-    );
-  }
+  State<HomePage> createState() => _State();
 }
 
-
+class _State extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar:
+        AppBar(title: const Center(child: Text("Flutter Firebase Demo"))),
+        bottomNavigationBar: const CustomBottomAppBar(),
+        body: Center(
+            child: ListView(children: [
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Card(
+                    color: Colors.grey.shade300,
+                    child: Image.asset("res/firebase_compendium_logo.png")),
+              ),
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const AuthPage()));
+                      },
+                      child: const Text("Authentication"))),
+              Container(height: 10),
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const FirestorePage()));
+                      },
+                      child: const Text("Cloud Firestore"))),
+              Container(height: 10),
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const FunctionsPage()));
+                      },
+                      child: const Text("Cloud Functions"))),
+              Container(height: 10),
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const StoragePage()));
+                      },
+                      child: const Text("Storage"))),
+              Container(height: 10),
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const RemoteConfigPage()));
+                      },
+                      child: const Text("Remote Config"))),
+            ])));
+  }
+}
